@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
+  before_action :authorized?, except [:new, :create]
+
   def index
     @users = Users.all
   end
@@ -44,5 +47,5 @@ class UsersController < ApplicationController
         render :new
       end
     end
-    
+
 end
