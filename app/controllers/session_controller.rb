@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-  before_action :authorized?, only: [:destroy]
+  #before_action :authorized?, only: [:destroy]
 
   def home
     redirect_to current_user if signed_in?

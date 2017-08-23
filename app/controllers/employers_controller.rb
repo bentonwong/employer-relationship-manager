@@ -1,6 +1,6 @@
 class EmployersController < ApplicationController
   before_action :set_employer, only: [:show, :update, :edit]
-  before_action :authorized?
+  #before_action :authorized?
 
   def index
     @employers = Employer.all

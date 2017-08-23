@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :authorized?, except [:new, :create]
+  #before_action :authorized?, except: [:new, :create]
 
   def index
-    @users = Users.all
+    @users = User.all
   end
 
   def new
@@ -11,7 +11,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new
+    @user = User.new(user_params)
+    @user.save
+    redirect_to @user
   end
 
   def edit
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password)
     end
 
     def set_user

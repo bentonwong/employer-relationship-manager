@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update]
-  before_action :authorized?
+  #before_action :authorized?
 
   def index
     @jobs = Job.all

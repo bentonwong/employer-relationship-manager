@@ -1,0 +1,15 @@
+<h3>User Sign In</h3>
+
+<% if @error %>
+  <%= @error %><br><br>
+<% end %>
+
+<%= form_for @lawyer, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br><br>
+
+  <%= f.submit "Sign In"%><%= button_to "Go Back", root_path, method: "get" %>
+
+<% end %><br>

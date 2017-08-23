@@ -1,4 +1,5 @@
 class ApplicationsController < ApplicationController
+  before_action :set_application, only: [:show, :edit, :update, :destroy]
 
   def index
     @applications = Application.all
@@ -10,12 +11,14 @@ class ApplicationsController < ApplicationController
 
   def create
     @application = Application.create(application_params)
+    @application.save
   end
 
   def edit
   end
 
   def update
+    @application.update(application_params)
   end
 
   def show
@@ -29,7 +32,7 @@ class ApplicationsController < ApplicationController
   private
 
     def application_params
-      params.require(:applications).permit(:date, :status, :job_id, :notes)
+      params.require(:applications).permit(:title, :description, :link, :employer, :location, :date_applied, :notes, :status)
     end
 
     def set_application
