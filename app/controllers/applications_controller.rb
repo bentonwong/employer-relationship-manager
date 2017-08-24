@@ -10,8 +10,9 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    @application = Application.create(application_params)
+    @application = Application.new(application_params)
     @application.save
+    redirect_to @application
   end
 
   def edit
@@ -32,7 +33,7 @@ class ApplicationsController < ApplicationController
   private
 
     def application_params
-      params.require(:applications).permit(:title, :description, :link, :employer, :location, :date_applied, :notes, :status)
+      params.require(:application).permit(:title)
     end
 
     def set_application

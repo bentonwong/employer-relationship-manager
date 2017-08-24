@@ -3,19 +3,5 @@
 <%= form_for @application do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title %><br>
-  <%= f.label :description %><br>
-  <%= f.text_field :description %><br>
-  <%= f.label :link %><br>
-  <%= f.text_field :link %><br>
-  <%= f.label :employer %><br>
-  <%= f.text_field :employer %><br>
-  <%= f.label :location %><br>
-  <%= f.text_field :location %><br>
-  <%= f.label :date_applied %><br>
-  <%= f.date_select :date, :order => [:month, :day, :year], :max => Date.today %><br>
-  <%= f.label :notes %><br>
-  <%= f.text_field :notes %><br>
-  <%= f.label :status %><br>
-  <%= f.text_field :status %><br>
   <%= f.submit %>
 <% end %>
