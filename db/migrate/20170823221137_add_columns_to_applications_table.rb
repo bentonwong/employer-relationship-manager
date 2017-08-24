@@ -5,6 +5,8 @@ class AddColumnsToApplicationsTable < ActiveRecord::Migration[5.0]
     add_column :applications, :employer, :string
     add_column :applications, :location, :string
     add_column :applications, :link, :string
-    add_column :applications, :date_applied, :date
+    add_column :applications, :date, :date
+    add_column :applications, :resume, :string
+    add_column :applications, :cover_letter, :string
   end
 end

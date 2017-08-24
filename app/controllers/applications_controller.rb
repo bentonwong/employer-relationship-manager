@@ -33,7 +33,7 @@ class ApplicationsController < ApplicationController
   private
 
     def application_params
-      params.require(:application).permit(:title)
+      params.require(:application).permit(:title, :company, :location, :description, :link, :date, :status, :notes, :resume, :cover_letter)
     end
 
     def set_application
